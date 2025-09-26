@@ -7,20 +7,13 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 body { scroll-behavior: smooth; perspective: 1000px; }
-
 /* Parallax Hero */
 #hero-img { transform: translateZ(0); will-change: transform; transition: transform 0.2s ease-out; }
-
 /* Card hover 3D */
 .card-hover:hover { transform: rotateY(5deg) rotateX(5deg) translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.25); transition: all 0.3s ease; cursor: pointer; }
-
 /* Fade-in on scroll */
 .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
 .fade-in.show { opacity: 1; transform: translateY(0); }
-
-/* FAQ toggle */
-.faq-answer { display: none; }
-.faq-item.open .faq-answer { display: block; }
 </style>
 </head>
 <body class="bg-blue-50 text-gray-800 font-sans">
@@ -34,13 +27,12 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 <a href="#plans" class="hover:underline">Planos</a>
 <a href="#services" class="hover:underline">Serviços</a>
 <a href="#benefits" class="hover:underline">Benefícios</a>
-<a href="#faq" class="hover:underline">FAQ</a>
 <a href="#contact" class="hover:underline">Contato</a>
 </nav>
 </div>
 </header>
 
-<!-- HERO COM PARALLAX -->
+<!-- HERO -->
 <section id="home" class="relative bg-blue-100 overflow-hidden">
 <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-10">
 <div class="md:w-1/2 fade-in">
@@ -58,9 +50,9 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 <section id="plans" class="pt-12 pb-12 bg-blue-50">
 <div class="max-w-6xl mx-auto px-6">
 <h2 class="text-3xl font-bold mb-6 text-blue-900 text-center fade-in">Planos</h2>
-<div class="flex flex-wrap justify-center gap-6 py-6">
+<div class="flex overflow-x-auto gap-6 py-6">
 <!-- Básico -->
-<div class="w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
+<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
 <h3 class="text-xl font-semibold mb-2 text-blue-700">Básico</h3>
 <p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$2.000</strong><br>Manutenção mensal: <strong>R$499,99</strong></p>
 <ul class="list-disc pl-5 mb-4 text-gray-600">
@@ -71,7 +63,7 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 <a href="https://wa.me/5511973875305?text=Quero%20contratar%20o%20plano%20B%C3%A1sico" target="_blank" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition-smooth">Contratar</a>
 </div>
 <!-- Pro -->
-<div class="w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
+<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
 <h3 class="text-xl font-semibold mb-2 text-blue-700">Pro</h3>
 <p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$5.000</strong><br>Manutenção mensal: <strong>R$859,99</strong></p>
 <ul class="list-disc pl-5 mb-4 text-gray-600">
@@ -82,7 +74,7 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 <a href="https://wa.me/5511973875305?text=Quero%20contratar%20o%20plano%20Pro" target="_blank" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition-smooth">Contratar</a>
 </div>
 <!-- Premium -->
-<div class="w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
+<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
 <h3 class="text-xl font-semibold mb-2 text-blue-700">Premium</h3>
 <p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$20.000</strong><br>Manutenção mensal: <strong>R$2.000</strong></p>
 <ul class="list-disc pl-5 mb-4 text-gray-600">
@@ -131,33 +123,12 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="pt-12 pb-12 bg-blue-100 fade-in">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h2 class="text-3xl font-bold mb-6 text-blue-900">Perguntas Frequentes</h2>
-<div class="text-left max-w-3xl mx-auto space-y-4">
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Como a IA é implementada na minha empresa?</p>
-<p class="faq-answer text-gray-700 mt-1">Conectamos nossos agentes aos seus canais de atendimento, CRM e banco de dados para automação completa.</p>
-</div>
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Posso mudar de plano depois?</p>
-<p class="faq-answer text-gray-700 mt-1">Sim! Você pode migrar entre os planos Básico, Pro e Premium a qualquer momento.</p>
-</div>
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Preciso de equipe técnica para gerenciar?</p>
-<p class="faq-answer text-gray-700 mt-1">Não, nossos agentes são totalmente gerenciáveis via interface simples e intuitiva.</p>
-</div>
-</div>
-</div>
-</section>
-
 <!-- CONTATO -->
-<section id="contact" class="pt-12 pb-12 bg-blue-50 fade-in">
+<section id="contact" class="pt-12 pb-12 bg-blue-100 fade-in">
 <div class="max-w-6xl mx-auto px-6 text-center">
 <h2 class="text-3xl font-bold mb-4 text-blue-900">Contato</h2>
-<p class="mb-4">Entre em contato pelo WhatsApp para dúvidas ou contratação:</p>
-<a href="https://wa.me/5511973875305" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-smooth">Abrir WhatsApp</a>
+<p class="mb-4">Clique no botão abaixo para iniciar o fluxo de perguntas via WhatsApp e registrar seu interesse:</p>
+<a href="https://wa.me/5511973875305?text=Olá,%20quero%20iniciar%20o%20fluxo%20de%20informações" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition-smooth">Iniciar WhatsApp</a>
 </div>
 </section>
 
@@ -167,13 +138,6 @@ body { scroll-behavior: smooth; perspective: 1000px; }
 </footer>
 
 <script>
-// FAQ toggle
-document.querySelectorAll('.faq-item p.cursor-pointer').forEach(item => {
-  item.addEventListener('click', () => {
-    item.parentElement.classList.toggle('open');
-  });
-});
-
 // Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
