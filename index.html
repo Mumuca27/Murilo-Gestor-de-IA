@@ -1,198 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Murilo Gestor de IA - Agente Empresarial</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body { scroll-behavior: smooth; perspective: 1000px; }
-
-/* Parallax Hero */
-#hero-img { transform: translateZ(0); will-change: transform; transition: transform 0.2s ease-out; }
-
-/* Card hover 3D */
-.card-hover:hover { transform: rotateY(5deg) rotateX(5deg) translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.25); transition: all 0.3s ease; cursor: pointer; }
-
-/* Fade-in on scroll */
-.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
-
-/* FAQ toggle */
-.faq-answer { display: none; }
-.faq-item.open .faq-answer { display: block; }
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murilo Gestor de IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f9ff;
+      color: #333;
+    }
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #003680;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .plan {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .plan h3 {
+      margin-top: 0;
+      color: #004aad;
+    }
+    .plan p {
+      font-size: 1.1rem;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #003680;
+    }
+    .plan a {
+      display: inline-block;
+      background: #004aad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .plan a:hover {
+      background: #002d66;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #003680;
+      color: white;
+    }
+    img.banner {
+      width: 100%;
+      height: auto;
+      border-bottom: 4px solid #004aad;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800 font-sans">
+<body>
+  <header>
+    <h1>Murilo Gestor de IA</h1>
+    <p>Automação inteligente para potencializar sua empresa</p>
+  </header>
 
-<!-- MENU FIXO -->
-<header class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
-<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-<h1 class="text-2xl font-bold">Murilo Gestor de IA</h1>
-<nav class="space-x-4">
-<a href="#home" class="hover:underline">Home</a>
-<a href="#plans" class="hover:underline">Planos</a>
-<a href="#services" class="hover:underline">Serviços</a>
-<a href="#benefits" class="hover:underline">Benefícios</a>
-<a href="#faq" class="hover:underline">FAQ</a>
-<a href="#contact" class="hover:underline">Contato</a>
-</nav>
-</div>
-</header>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#planos">Planos</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
-<!-- HERO COM PARALLAX -->
-<section id="home" class="relative bg-blue-100 overflow-hidden">
-<div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-10">
-<div class="md:w-1/2 fade-in">
-<h2 class="text-5xl font-bold mb-4 text-blue-900">Murilo Gestor de IA</h2>
-<p class="text-lg mb-6">Transforme sua empresa com agentes de Inteligência Artificial prontos para atendimento, vendas e análise de dados.</p>
-<a href="#plans" class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-smooth">Confira os Planos</a>
-</div>
-<div class="md:w-1/2 relative">
-<img id="hero-img" src="https://images.unsplash.com/photo-1581091870621-8b9e5d82d3eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Escritório moderno" class="rounded-xl shadow-lg w-full">
-</div>
-</div>
-</section>
+  <section>
+    <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Escritório moderno com tecnologia" class="banner">
+  </section>
 
-<!-- PLANOS -->
-<section id="plans" class="pt-12 pb-12 bg-blue-50">
-<div class="max-w-6xl mx-auto px-6">
-<h2 class="text-3xl font-bold mb-6 text-blue-900 text-center fade-in">Planos</h2>
-<div class="flex overflow-x-auto gap-6 py-6">
-<!-- Básico -->
-<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Básico</h3>
-<p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$2.000</strong><br>Manutenção mensal: <strong>R$499,99</strong></p>
-<ul class="list-disc pl-5 mb-4 text-gray-600">
-<li>Agente de IA para atendimento</li>
-<li>Relatórios simples</li>
-<li>Gestão de dados básicos</li>
-</ul>
-<a href="https://wa.me/5511973875305?text=Quero%20contratar%20o%20plano%20B%C3%A1sico" target="_blank" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition-smooth">Contratar</a>
-</div>
-<!-- Pro -->
-<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Pro</h3>
-<p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$5.000</strong><br>Manutenção mensal: <strong>R$859,99</strong></p>
-<ul class="list-disc pl-5 mb-4 text-gray-600">
-<li>Todos os recursos do Básico</li>
-<li>Relatórios avançados</li>
-<li>Automação de vendas e follow-up</li>
-</ul>
-<a href="https://wa.me/5511973875305?text=Quero%20contratar%20o%20plano%20Pro" target="_blank" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition-smooth">Contratar</a>
-</div>
-<!-- Premium -->
-<div class="flex-shrink-0 w-80 p-6 bg-white rounded-3xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Premium</h3>
-<p class="text-sm text-gray-600 mb-4">Entrada: <strong>R$20.000</strong><br>Manutenção mensal: <strong>R$2.000</strong></p>
-<ul class="list-disc pl-5 mb-4 text-gray-600">
-<li>Todos os recursos do Pro</li>
-<li>Integração completa com WhatsApp e CRM</li>
-<li>Consultoria mensal personalizada</li>
-</ul>
-<a href="https://wa.me/5511973875305?text=Quero%20contratar%20o%20plano%20Premium" target="_blank" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition-smooth">Contratar</a>
-</div>
-</div>
-</div>
-</section>
+  <section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>O <strong>Murilo Gestor de IA</strong> foi criado para ajudar pequenas e médias empresas a crescerem com inteligência artificial. Nossas soluções automatizam atendimentos, organizam informações e otimizam processos, permitindo que você foque no que realmente importa: o crescimento do seu negócio.</p>
+  </section>
 
-<!-- SERVIÇOS -->
-<section id="services" class="pt-12 pb-12 bg-blue-100">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h2 class="text-3xl font-bold mb-6 text-blue-900 fade-in">Nossos Serviços</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="p-6 bg-white rounded-xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Atendimento Automatizado</h3>
-<p>Chatbots inteligentes que respondem dúvidas, agendam compromissos e interagem com clientes 24h por dia.</p>
-</div>
-<div class="p-6 bg-white rounded-xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Gestão de Vendas</h3>
-<p>Automatização de funil de vendas, follow-ups e relatórios detalhados para decisões estratégicas rápidas.</p>
-</div>
-<div class="p-6 bg-white rounded-xl shadow-lg card-hover fade-in">
-<h3 class="text-xl font-semibold mb-2 text-blue-700">Relatórios e Insights</h3>
-<p>Análise de dados em tempo real, ajudando a identificar oportunidades e otimizar processos internos.</p>
-</div>
-</div>
-</div>
-</section>
+  <section id="planos">
+    <h2>Planos disponíveis</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Plano Básico</h3>
+        <p>Ideal para começar a automatizar sua empresa.</p>
+        <p class="price">R$ 2.000 de entrada + R$ 499,99/mês</p>
+        <a href="https://wa.me/5511973875305?text=Olá,%20quero%20adquirir%20os%20serviços%20do%20gerente%20de%20IA%20para%20minha%20empresa.%20Plano:%20Básico." target="_blank">Contratar</a>
+      </div>
+      <div class="plan">
+        <h3>Plano Pro</h3>
+        <p>Para empresas que buscam mais integração e suporte.</p>
+        <p class="price">R$ 5.000 de entrada + R$ 859,99/mês</p>
+        <a href="https://wa.me/5511973875305?text=Olá,%20quero%20adquirir%20os%20serviços%20do%20gerente%20de%20IA%20para%20minha%20empresa.%20Plano:%20Pro." target="_blank">Contratar</a>
+      </div>
+      <div class="plan">
+        <h3>Plano Premium</h3>
+        <p>Solução completa com suporte total e personalizações.</p>
+        <p class="price">R$ 20.000 de entrada + R$ 2.000/mês</p>
+        <a href="https://wa.me/5511973875305?text=Olá,%20quero%20adquirir%20os%20serviços%20do%20gerente%20de%20IA%20para%20minha%20empresa.%20Plano:%20Premium." target="_blank">Contratar</a>
+      </div>
+    </div>
+  </section>
 
-<!-- BENEFÍCIOS -->
-<section id="benefits" class="pt-12 pb-12 bg-blue-50 fade-in">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h2 class="text-3xl font-bold mb-6 text-blue-900">Benefícios da IA</h2>
-<ul class="text-left max-w-3xl mx-auto space-y-2">
-<li>✔ Redução de erros humanos e retrabalho.</li>
-<li>✔ Atendimento rápido e disponível 24/7.</li>
-<li>✔ Aumento de produtividade da equipe.</li>
-<li>✔ Decisões estratégicas baseadas em dados reais.</li>
-<li>✔ Escalabilidade sem aumento de custos de pessoal.</li>
-</ul>
-</div>
-</section>
+  <section id="contato">
+    <h2>Fale conosco</h2>
+    <p>Entre em contato para dúvidas ou propostas personalizadas.</p>
+    <p>Email: contato@murilogestordeia.com</p>
+    <p>WhatsApp: <a href="https://wa.me/5511973875305?text=Olá,%20quero%20adquirir%20os%20serviços%20do%20gerente%20de%20IA%20para%20minha%20empresa." target="_blank">Clique aqui para conversar</a></p>
+  </section>
 
-<!-- FAQ -->
-<section id="faq" class="pt-12 pb-12 bg-blue-100 fade-in">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h2 class="text-3xl font-bold mb-6 text-blue-900">Perguntas Frequentes</h2>
-<div class="text-left max-w-3xl mx-auto space-y-4">
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Como a IA é implementada na minha empresa?</p>
-<p class="faq-answer text-gray-700 mt-1">Conectamos nossos agentes aos seus canais de atendimento, CRM e banco de dados para automação completa.</p>
-</div>
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Posso mudar de plano depois?</p>
-<p class="faq-answer text-gray-700 mt-1">Sim! Você pode migrar entre os planos Básico, Pro e Premium a qualquer momento.</p>
-</div>
-<div class="faq-item border-b pb-2">
-<p class="font-semibold cursor-pointer">❓ Preciso de equipe técnica para gerenciar?</p>
-<p class="faq-answer text-gray-700 mt-1">Não, nossos agentes são totalmente gerenciáveis via interface simples e intuitiva.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CONTATO -->
-<section id="contact" class="pt-12 pb-12 bg-blue-50 fade-in">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h2 class="text-3xl font-bold mb-4 text-blue-900">Contato</h2>
-<p class="mb-4">Entre em contato pelo WhatsApp para dúvidas ou contratação:</p>
-<a href="https://wa.me/5511973875305" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-smooth">Abrir WhatsApp</a>
-</div>
-</section>
-
-<!-- RODAPÉ -->
-<footer class="bg-blue-700 text-white py-6 mt-12 text-center">
-&copy; 2025 Murilo Gestor de IA. Todos os direitos reservados.
-</footer>
-
-<script>
-// FAQ toggle
-document.querySelectorAll('.faq-item p.cursor-pointer').forEach(item => {
-  item.addEventListener('click', () => {
-    item.parentElement.classList.toggle('open');
-  });
-});
-
-// Fade-in on scroll
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('show');
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-// Parallax hero
-window.addEventListener('scroll', () => {
-  const hero = document.getElementById('hero-img');
-  hero.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-});
-</script>
-
+  <footer>
+    <p>&copy; 2025 Murilo Gestor de IA - Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
